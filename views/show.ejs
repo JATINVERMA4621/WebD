@@ -1,0 +1,26 @@
+<% include partials/header%>
+<div class="display-3"><%i.name%></div>
+<div class="card " style="border:none">
+  <h5 class="card-header"></h5>
+  <div class="card-body" style="margin:0;">
+    <h5 class="card-title"><img class="card-img-top img-fluid img-thumbnail" src="<%=i.img%>" style="height:12rem;width:30%;"></h5>
+    <h4><%=i.name%></h4>
+     <a href="/image/<%=i._id%>/edit" class="btn btn-primary">Modify</a>
+    
+    <form action="/image/<%=i._id%>?_method=DELETE" method="POST" style="display:inline">
+        <button class="btn btn-danger" >DELETE</button>
+    </form>
+    <p class="card-text"><%=i.description%></p>
+    <a class="btn btn-success" href="/image/<%=i._id%>/comments/new">Add new comment</a>
+    <%i.comments.forEach(function(comment){%>
+    <p>
+        <strong><%=comment.author%></strong>-<%=comment.text%>
+    </p>
+   <% });%>
+    
+   
+  </div>
+</div>
+
+
+<%include partials/footer%>

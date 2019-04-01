@@ -1,0 +1,28 @@
+<% include partials/header%>
+    
+  <div class="jumbotron">
+      <div class="display-1">WELCOME TO WEBSITE</div>
+      <a class="btn btn-success" href="/new">Add New Lake</a>
+  </div> 
+ <div class="row" style="display:flex ;flex-wrap:wrap;">
+  
+    
+           <%i.forEach(function(img){%>
+           <div class="col-sm-6 col-md-4" style="margin:0">
+           <div class="card text-center" style="margin-bottom:1rem; border:none;" >
+      <div class="card-body" style="margin:0;padding:0;">
+        <img class="card-img-top img-fluid img-thumbnail" src="<%=img.img%>" style="height:12rem;">
+        <h5 class="card-title" style="margin:0;"><%=img.name%></h5>
+        <a href="/image/<%=img._id%>" class="btn btn-info">More Info</a>
+         </div>
+    </div>
+  </div>
+        <% });%>
+        
+     
+ </div>
+       
+    
+
+
+<%include partials/footer%>
